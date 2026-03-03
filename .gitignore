@@ -19,6 +19,7 @@ yarn-error.log*
 # others
 .DS_Store
 package-lock.json
+yarn.lock
 coverage/
 
 .idea/

@@ -135,6 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- THEME & STICKY BG TRANSITIONS ---
   const root = document.documentElement;
 
+  // Initial State (Hero)
+
+  const tweenTheme = (vars, delay = 0) => gsap.to(root, { duration: 0.5, ease: 'power2.out', delay, ...vars });
+
   // Track the active background for the sticky header
   // We animate --active-bg directly in each ScrollTrigger to keep it seamless
 
@@ -142,72 +146,63 @@ document.addEventListener('DOMContentLoaded', () => {
   gsap.set(root, { '--active-bg': '#FDF6FA' });
 
   // Zone 0: Hero -> Create
-  // Pattern: gradient element is the trigger and updates the background
-  // of the section ABOVE it (hero), just like the other zones.
   const trigger0 = document.querySelector('.gradient-transition-hero');
   if (trigger0) {
-    gsap.to(root, {
-      '--theme-bg': '#1a1a2e',  // hero background moves toward the create-section color
-      '--active-bg': '#1a1a2e',
-      '--theme-text': '#ffffff',
-      '--theme-text-secondary': '#9ca3af',
-      scrollTrigger: {
-        trigger: trigger0,
-        start: 'top bottom',
-        end: 'bottom 95%',
-        scrub: true
-      }
+    ScrollTrigger.create({
+      trigger: trigger0,
+      start: 'top 10%', // fires when gradient is almost at the top — hero holds its color much longer
+      onEnter: () => tweenTheme({ '--theme-bg': '#1A1A2E', '--theme-text': '#FFFFFF', '--theme-text-secondary': '#9CA3AF' }),
+      onLeaveBack: () => {
+        tweenTheme({ '--theme-bg': '#FDF6FA' }); // bg reverts immediately
+        tweenTheme({ '--theme-text': '#1A1A2E', '--theme-text-secondary': '#475569' }, 0.25); // text follows
+      },
     });
   }
 
   // Zone 1: Create -> Why Pick
   const trigger1 = document.querySelector('.gradient-transition-what-you-can-create');
   if (trigger1) {
-    gsap.to(root, {
-      '--theme-1-bg': '#F4F8FF',
-      '--theme-1-gradient-start': '#F4F8FF',
-      '--theme-text': '#1e293b',
-      '--theme-text-secondary': '#475569',
-      '--theme-card-text': '#1e293b',
-      '--theme-card-desc': '#64748b',
-      '--theme-icon': '#64748b',
-      '--theme-cta-bg': '#6d28d9',
-      '--theme-cta-text': '#ffffff',
-      '--active-bg': '#F4F8FF', // Sync sticky header bg
-      scrollTrigger: { trigger: trigger1, start: 'top bottom', end: 'bottom 95%', scrub: true }
+    ScrollTrigger.create({
+      trigger: trigger1,
+      start: 'bottom 95%',
+      onEnter: () => tweenTheme({ '--theme-1-bg': '#F4F8FF', '--theme-1-gradient-start': '#F4F8FF', '--theme-text': '#1A1A2E', '--theme-text-secondary': '#475569', '--theme-card-text': '#1A1A2E', '--theme-card-desc': '#64748B', '--theme-icon': '#64748B', '--theme-cta-bg': '#6D28D9', '--theme-cta-text': '#FFFFFF' }),
+      onLeaveBack: () => {
+        tweenTheme({ '--theme-1-bg': '#1A1A2E', '--theme-1-gradient-start': '#1A1A2E' });
+        tweenTheme({ '--theme-text': '#FFFFFF', '--theme-text-secondary': '#9CA3AF', '--theme-card-text': '#FFFFFF' }, 0.25);
+      },
     });
   }
 
   // Zone 2: Why Pick -> Testimonials
   const trigger2 = document.querySelector('.gradient-transition-why-pick');
   if (trigger2) {
-    gsap.to(root, {
-      '--theme-2-bg': '#FDF6FA',
-      '--theme-2-gradient-start': '#FDF6FA',
-      '--active-bg': '#FDF6FA', // Sync sticky header bg
-      scrollTrigger: { trigger: trigger2, start: 'top bottom', end: 'bottom 95%', scrub: true }
+    ScrollTrigger.create({
+      trigger: trigger2,
+      start: 'bottom 95%',
+      onEnter: () => tweenTheme({ '--theme-2-bg': '#FDF6FA', '--theme-2-gradient-start': '#FDF6FA' }),
+      onLeaveBack: () => tweenTheme({ '--theme-2-bg': '#F4F8FF', '--theme-2-gradient-start': '#F4F8FF' }),
     });
   }
 
   // Zone 3: Testimonials -> Distraction
   const trigger3 = document.querySelector('.gradient-transition-testimonials');
   if (trigger3) {
-    gsap.to(root, {
-      '--theme-3-bg': '#FFE3E9',
-      '--theme-3-gradient-start': '#FFE3E9',
-      '--active-bg': '#FFE3E9', // Sync sticky header bg
-      scrollTrigger: { trigger: trigger3, start: 'top bottom', end: 'bottom 95%', scrub: true }
+    ScrollTrigger.create({
+      trigger: trigger3,
+      start: 'bottom 95%',
+      onEnter: () => tweenTheme({ '--theme-3-bg': '#FFE3E9', '--theme-3-gradient-start': '#FFE3E9' }),
+      onLeaveBack: () => tweenTheme({ '--theme-3-bg': '#FDF6FA', '--theme-3-gradient-start': '#FDF6FA' }),
     });
   }
 
   // Zone 4: Science/Blog -> FAQ
   const trigger4 = document.querySelector('.gradient-transition-blog');
   if (trigger4) {
-    gsap.to(root, {
-      '--theme-4-bg': '#FFFFFF',
-      '--theme-4-gradient-start': '#FFFFFF',
-      '--active-bg': '#FFFFFF', // Sync sticky header bg
-      scrollTrigger: { trigger: trigger4, start: 'top bottom', end: 'bottom 95%', scrub: true }
+    ScrollTrigger.create({
+      trigger: trigger4,
+      start: 'bottom 95%',
+      onEnter: () => tweenTheme({ '--theme-4-bg': '#FFFFFF', '--theme-4-gradient-start': '#FFFFFF' }),
+      onLeaveBack: () => tweenTheme({ '--theme-4-bg': '#FFE3E9', '--theme-4-gradient-start': '#FFE3E9' }),
     });
   }
 

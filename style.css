@@ -845,14 +845,12 @@ header .nav-item {
        gradient element is the trigger, and it smoothly blends
        the section ABOVE (hero) into the section BELOW (create). */
   background: linear-gradient(180deg, var(--theme-bg) 0%, var(--theme-1-bg) 100%);
-  border: 1px dashed red;
 }
 
 
 .gradient-transition-what-you-can-create {
   height: 120px;
   background: linear-gradient(180deg, var(--theme-1-gradient-start) 0%, #F4F8FF 100%);
-  border: 1px dashed red;
 }
 
 /* Why Pick AhaSlides Section */
@@ -957,19 +955,16 @@ header .nav-item {
 .gradient-transition-why-pick {
   height: 120px;
   background: linear-gradient(180deg, var(--theme-2-gradient-start) 0%, #FDF6FA 100%);
-  border: 1px dashed red;
 }
 
 .gradient-transition-testimonials {
   height: 120px;
   background: linear-gradient(180deg, var(--theme-3-gradient-start) 0%, #FFE3E9 100%);
-  border: 1px dashed red;
 }
 
 .gradient-transition-blog {
   height: 120px;
   background: linear-gradient(180deg, var(--theme-4-gradient-start) 0%, #FFFFFF 100%);
-  border: 1px dashed red;
 }
 
 

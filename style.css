@@ -459,7 +459,6 @@ header .nav-item {
   justify-content: center;
   align-items: center;
   z-index: 2;
-  max-width: 600px;
 }
 
 .visual-item {
@@ -512,6 +511,7 @@ header .nav-item {
 
 .visual-item.speaker {
   width: 35vw;
+  max-width: 600px;
   z-index: 0;
   /* Center the main image */
   position: relative;

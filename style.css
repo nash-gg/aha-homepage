@@ -358,34 +358,6 @@ header .nav-item {
   position: relative;
 }
 
-.scale-logo {
-  width: 40vw;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  pointer-events: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.scale-logo svg {
-  width: 60vw;
-  height: auto;
-  opacity: 0.8;
-  transition: all 0.2s ease;
-}
-
-.hero-visuals:hover .scale-logo svg {
-  opacity: 1;
-  transform: scale(1.1);
-  transition: all .2s ease;
-}
-
-
-
 /* Hero Left Column */
 .hero-content {
   flex: 1;
@@ -469,7 +441,7 @@ header .nav-item {
 }
 
 .rating {
-  color: #333;
+  color: var(--theme-text);
   margin-left: 0.25rem;
 }
 
@@ -639,12 +611,11 @@ header .nav-item {
   border: 1px solid #E3E3E3;
   border-radius: 8px;
   box-shadow: none;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: background-color 0.2s;
 }
 
 .integration-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 12px -1px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
 }
 
 .integration-card img {
@@ -1572,10 +1543,6 @@ header .nav-item {
     z-index: 50;
   }
 
-  .scale-logo svg {
-    width: 90vw;
-  }
-
   /* Usecase Cards */
   .usecase-card {
     top: 4rem;
@@ -1763,7 +1730,7 @@ header .nav-item {
   .rating {
     margin-left: 0.5rem;
     font-weight: 700;
-    color: #1e293b;
+    color: var(--theme-text);
   }
 
   .reviews {
@@ -1776,16 +1743,6 @@ header .nav-item {
     padding: 0.6rem 1.25rem;
     font-size: 0.9rem;
     border-radius: 8px;
-  }
-
-  .scale-logo {
-    display: flex;
-    width: 100vw;
-  }
-
-  .scale-logo svg {
-    width: 140vw;
-    max-width: none;
   }
 
   .hero-visuals {

@@ -953,17 +953,17 @@ header .nav-item {
 /* Button overrides removed in favor of unified system */
 
 .gradient-transition-why-pick {
-  height: 0;
+  height: 120px;
   background: linear-gradient(180deg, var(--theme-2-gradient-start) 0%, #FDF6FA 100%);
 }
 
 .gradient-transition-testimonials {
-  height: 0;
+  height: 120px;
   background: linear-gradient(180deg, var(--theme-3-gradient-start) 0%, #FFE3E9 100%);
 }
 
 .gradient-transition-blog {
-  height: 0;
+  height: 120px;
   background: linear-gradient(180deg, var(--theme-4-gradient-start) 0%, #FFFFFF 100%);
 }
 
@@ -1431,6 +1431,10 @@ header .nav-item {
 
 .read-more:hover {
   transform: translateX(5px);
+}
+
+.read-more i {
+  line-height: normal;
 }
 
 .testimonial-image {

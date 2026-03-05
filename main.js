@@ -4,8 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Using GSAP from CDN, available globally
   gsap.registerPlugin(ScrollTrigger);
   // Topbar and Hero Height adjustments
-  const stickyHeader = document.querySelector('.sticky-header');
   const mainHeader = document.querySelector('header');
+  const stickyHeader = document.querySelector('.sticky-header');
+
 
   const adjustHeroHeight = () => {
     const topbar = document.querySelector('.topbar');
@@ -15,19 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.style.setProperty('--header-offset', `${offset}px`);
   };
 
-  // Function to update active background and contrast for sticky header
-  const updateHeaderStyle = (bg, text) => {
-    document.documentElement.style.setProperty('--active-bg', bg);
-    if (text) document.documentElement.style.setProperty('--theme-text', text);
 
-    // Toggle dark mode class if background is dark (text is white)
-    const isDark = (text === '#ffffff' || bg === '#1a1a2e' || bg === '#FF4081');
-    if (isDark) {
-      stickyHeader.classList.add('is-dark');
-    } else {
-      stickyHeader.classList.remove('is-dark');
-    }
-  };
 
   window.addEventListener('resize', adjustHeroHeight);
   adjustHeroHeight();
@@ -139,22 +128,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const tweenTheme = (vars, delay = 0) => gsap.to(root, { duration: 0.5, ease: 'power2.out', delay, ...vars });
 
-  // Track the active background for the sticky header
-  // We animate --active-bg directly in each ScrollTrigger to keep it seamless
-
-  // Initial State (Hero)
-  gsap.set(root, { '--active-bg': '#FDF6FA' });
-
   // Zone 0: Hero -> Create
   const trigger0 = document.querySelector('.gradient-transition-hero');
   if (trigger0) {
     ScrollTrigger.create({
       trigger: trigger0,
       start: 'top 20%', // fires when gradient is almost at the top — hero holds its color much longer
-      onEnter: () => tweenTheme({ '--theme-bg': '#1A1A2E', '--theme-text': '#FFFFFF', '--theme-text-secondary': '#9CA3AF' }),
+      onEnter: () => tweenTheme({ '--theme-bg': '#1a1a2e', '--theme-text': '#ffffff', '--theme-text-secondary': '#9ca3af' }),
       onLeaveBack: () => {
-        tweenTheme({ '--theme-bg': '#FDF6FA' }); // bg reverts immediately
-        tweenTheme({ '--theme-text': '#1A1A2E', '--theme-text-secondary': '#475569' }, 0.25); // text follows
+        tweenTheme({ '--theme-bg': '#FDF6FA' });                                          // bg reverts immediately
+        tweenTheme({ '--theme-text': '#1a1a2e', '--theme-text-secondary': '#475569' }, 0.25); // text follows
       },
     });
   }
@@ -165,10 +148,10 @@ document.addEventListener('DOMContentLoaded', () => {
     ScrollTrigger.create({
       trigger: trigger1,
       start: 'top 20%',
-      onEnter: () => tweenTheme({ '--theme-1-bg': '#F4F8FF', '--theme-1-gradient-start': '#F4F8FF', '--theme-text': '#1A1A2E', '--theme-text-secondary': '#475569', '--theme-card-text': '#1A1A2E', '--theme-card-desc': '#64748B', '--theme-icon': '#64748B', '--theme-cta-bg': '#6D28D9', '--theme-cta-text': '#FFFFFF' }),
+      onEnter: () => tweenTheme({ '--theme-1-bg': '#F4F8FF', '--theme-1-gradient-start': '#F4F8FF', '--theme-text': '#1a1a2e', '--theme-text-secondary': '#475569', '--theme-card-text': '#1a1a2e', '--theme-card-desc': '#64748b', '--theme-icon': '#64748b', '--theme-cta-bg': '#6d28d9', '--theme-cta-text': '#ffffff' }),
       onLeaveBack: () => {
-        tweenTheme({ '--theme-1-bg': '#1A1A2E', '--theme-1-gradient-start': '#1A1A2E' });
-        tweenTheme({ '--theme-text': '#FFFFFF', '--theme-text-secondary': '#9CA3AF', '--theme-card-text': '#FFFFFF' }, 0.25);
+        tweenTheme({ '--theme-1-bg': '#1a1a2e', '--theme-1-gradient-start': '#1a1a2e' });
+        tweenTheme({ '--theme-text': '#ffffff', '--theme-text-secondary': '#9ca3af', '--theme-card-text': '#ffffff' }, 0.25);
       },
     });
   }
@@ -178,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (trigger2) {
     ScrollTrigger.create({
       trigger: trigger2,
-      start: 'bottom 95%',
+      start: 'bottom 90%',
       onEnter: () => tweenTheme({ '--theme-2-bg': '#FDF6FA', '--theme-2-gradient-start': '#FDF6FA' }),
       onLeaveBack: () => tweenTheme({ '--theme-2-bg': '#F4F8FF', '--theme-2-gradient-start': '#F4F8FF' }),
     });
@@ -189,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (trigger3) {
     ScrollTrigger.create({
       trigger: trigger3,
-      start: 'bottom 95%',
+      start: 'bottom 90%',
       onEnter: () => tweenTheme({ '--theme-3-bg': '#FFE3E9', '--theme-3-gradient-start': '#FFE3E9' }),
       onLeaveBack: () => tweenTheme({ '--theme-3-bg': '#FDF6FA', '--theme-3-gradient-start': '#FDF6FA' }),
     });
@@ -206,16 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Initial state
-  updateHeaderStyle('#FDF6FA', '#1e293b');
 
-  // Hero Trigger
-  ScrollTrigger.create({
-    trigger: '#hero',
-    start: 'top top',
-    onEnter: () => updateHeaderStyle('#FDF6FA', '#1e293b'),
-    onEnterBack: () => updateHeaderStyle('#FDF6FA', '#1e293b'),
-  });
 
 
 

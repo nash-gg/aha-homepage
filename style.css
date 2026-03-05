@@ -714,7 +714,7 @@ header .nav-item {
 .usecase-card__image {
   width: auto;
   max-width: 100%;
-  aspect-ratio: 1010 / 447;
+  aspect-ratio: 2.2 / 1;
   object-fit: contain;
   /* Preserve exact ratio */
   display: block;

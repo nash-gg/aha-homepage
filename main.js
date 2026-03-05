@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollTrigger: {
         trigger: trigger0,
         start: 'top bottom',
-        end: 'bottom center',
+        end: 'bottom 95%',
         scrub: true
       }
     });
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '--theme-cta-bg': '#6d28d9',
       '--theme-cta-text': '#ffffff',
       '--active-bg': '#F4F8FF', // Sync sticky header bg
-      scrollTrigger: { trigger: trigger1, start: 'top bottom', end: 'bottom center', scrub: true }
+      scrollTrigger: { trigger: trigger1, start: 'top bottom', end: 'bottom 95%', scrub: true }
     });
   }
 
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '--theme-2-bg': '#FDF6FA',
       '--theme-2-gradient-start': '#FDF6FA',
       '--active-bg': '#FDF6FA', // Sync sticky header bg
-      scrollTrigger: { trigger: trigger2, start: 'top bottom', end: 'bottom center', scrub: true }
+      scrollTrigger: { trigger: trigger2, start: 'top bottom', end: 'bottom 95%', scrub: true }
     });
   }
 
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '--theme-3-bg': '#FFE3E9',
       '--theme-3-gradient-start': '#FFE3E9',
       '--active-bg': '#FFE3E9', // Sync sticky header bg
-      scrollTrigger: { trigger: trigger3, start: 'top bottom', end: 'bottom center', scrub: true }
+      scrollTrigger: { trigger: trigger3, start: 'top bottom', end: 'bottom 95%', scrub: true }
     });
   }
 
@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '--theme-4-bg': '#FFFFFF',
       '--theme-4-gradient-start': '#FFFFFF',
       '--active-bg': '#FFFFFF', // Sync sticky header bg
-      scrollTrigger: { trigger: trigger4, start: 'top bottom', end: 'bottom center', scrub: true }
+      scrollTrigger: { trigger: trigger4, start: 'top bottom', end: 'bottom 95%', scrub: true }
     });
   }
 

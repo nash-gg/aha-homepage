@@ -25,6 +25,7 @@
   --theme-1-bg: #1a1a2e;
   --theme-1-card-bg: #1a1a2e;
   --theme-1-gradient-start: #1a1a2e;
+  --theme-1-bg-rgb: 26, 26, 46;
 
   /* Transition Zone 2: Why Pick -> Testimonials */
   --theme-2-bg: #F4F8FF;
@@ -757,7 +758,12 @@ header .nav-item {
 .usecase-card__gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, var(--theme-1-bg) 0%, rgba(26, 26, 46, 0.50) 50%, rgba(26, 26, 46, 0.00) 100%);
+  background: linear-gradient(
+    0deg,
+    var(--theme-1-bg) 0%,
+    color-mix(in srgb, var(--theme-1-bg) 50%, transparent) 50%,
+    color-mix(in srgb, var(--theme-1-bg) 0%, transparent) 100%
+  );
   pointer-events: none;
   z-index: 2;
 }
@@ -778,14 +784,14 @@ header .nav-item {
 .usecase-card__content h3 {
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 600;
-  color: #fff;
+  color: var(--theme-text);
   margin-bottom: 2rem;
   line-height: 1.1;
   letter-spacing: -0.5px;
 }
 
 .card-desc {
-  color: #fff;
+  color: var(--theme-text-secondary);
   font-size: 0.95rem;
   line-height: 1.7;
   margin-bottom: 1.25rem;
@@ -831,9 +837,9 @@ header .nav-item {
   justify-content: center;
   padding: 0.75rem 2rem;
   border-radius: 10px;
-  background: #fff;
+  background: #1A1A2E;
   border: 1px solid rgba(240, 240, 240, 0.13);
-  color: #1e293b;
+  color: #ffffff;
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
@@ -843,9 +849,8 @@ header .nav-item {
 }
 
 .card-cta:hover {
-  background: #FF4282;
+  background: #3E3E5A;
   color: #ffffff;
-  transform: translateY(-2px);
   box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.2);
 }
 

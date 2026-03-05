@@ -138,7 +138,7 @@ header {
   width: 100%;
   z-index: 2000;
   padding: 1rem 2rem;
-  background-color: var(--active-bg, #FDF6FA);
+  background-color: #ffffff;
   box-shadow: 0 4px 25px -12px rgba(0, 0, 0, 0.12);
   transform: translateY(-100%);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease, box-shadow 0.4s ease;
@@ -168,7 +168,7 @@ header .nav-item {
 /* Sticky header overrides - using theme variables for seamless transition */
 .sticky-header .nav-links a,
 .sticky-header .nav-item {
-  color: var(--theme-text);
+  color: #475569;
   transition: color 0.4s ease;
 }
 
@@ -180,11 +180,6 @@ header .nav-item {
   height: 28px;
   width: auto;
   transition: filter 0.4s ease;
-}
-
-/* Logo inversion handled via JS class for reliability */
-.sticky-header.is-dark .logo img {
-  filter: brightness(0) invert(1);
 }
 
 .nav-left {

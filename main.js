@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (trigger0) {
     ScrollTrigger.create({
       trigger: trigger0,
-      start: 'top 10%', // fires when gradient is almost at the top — hero holds its color much longer
+      start: 'top 20%', // fires when gradient is almost at the top — hero holds its color much longer
       onEnter: () => tweenTheme({ '--theme-bg': '#1A1A2E', '--theme-text': '#FFFFFF', '--theme-text-secondary': '#9CA3AF' }),
       onLeaveBack: () => {
         tweenTheme({ '--theme-bg': '#FDF6FA' }); // bg reverts immediately
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (trigger1) {
     ScrollTrigger.create({
       trigger: trigger1,
-      start: 'bottom 95%',
+      start: 'top 20%',
       onEnter: () => tweenTheme({ '--theme-1-bg': '#F4F8FF', '--theme-1-gradient-start': '#F4F8FF', '--theme-text': '#1A1A2E', '--theme-text-secondary': '#475569', '--theme-card-text': '#1A1A2E', '--theme-card-desc': '#64748B', '--theme-icon': '#64748B', '--theme-cta-bg': '#6D28D9', '--theme-cta-text': '#FFFFFF' }),
       onLeaveBack: () => {
         tweenTheme({ '--theme-1-bg': '#1A1A2E', '--theme-1-gradient-start': '#1A1A2E' });

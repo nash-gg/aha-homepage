@@ -856,7 +856,7 @@ header .nav-item {
 /* Why Pick AhaSlides Section */
 .why-pick-section {
   background-color: var(--theme-2-bg);
-  padding: 2rem 2rem 6rem;
+  padding: 6rem 2rem;
   display: flex;
   justify-content: center;
 }

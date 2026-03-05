@@ -459,6 +459,7 @@ header .nav-item {
   justify-content: center;
   align-items: center;
   z-index: 2;
+  max-width: 600px;
 }
 
 .visual-item {

@@ -840,7 +840,7 @@ header .nav-item {
 }
 
 .gradient-transition-hero {
-  height: 120px;
+  height: 0;
   /* Follows the same pattern as other transitions:
        gradient element is the trigger, and it smoothly blends
        the section ABOVE (hero) into the section BELOW (create). */
@@ -849,7 +849,7 @@ header .nav-item {
 
 
 .gradient-transition-what-you-can-create {
-  height: 120px;
+  height: 0;
   background: linear-gradient(180deg, var(--theme-1-gradient-start) 0%, #F4F8FF 100%);
 }
 
@@ -953,17 +953,17 @@ header .nav-item {
 /* Button overrides removed in favor of unified system */
 
 .gradient-transition-why-pick {
-  height: 120px;
+  height: 0;
   background: linear-gradient(180deg, var(--theme-2-gradient-start) 0%, #FDF6FA 100%);
 }
 
 .gradient-transition-testimonials {
-  height: 120px;
+  height: 0;
   background: linear-gradient(180deg, var(--theme-3-gradient-start) 0%, #FFE3E9 100%);
 }
 
 .gradient-transition-blog {
-  height: 120px;
+  height: 0;
   background: linear-gradient(180deg, var(--theme-4-gradient-start) 0%, #FFFFFF 100%);
 }
 
@@ -1465,20 +1465,12 @@ header .nav-item {
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
-  opacity: 0.7;
-  /* grayscale logo look */
 }
 
 .trusted-logos img {
   width: 200px;
   height: auto;
   object-fit: cover;
-  filter: grayscale(100%);
-  transition: filter 0.3s;
-}
-
-.trusted-logos img:hover {
-  filter: grayscale(0);
 }
 
 .testimonials-cta {
